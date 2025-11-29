@@ -1,0 +1,135 @@
+/* ====== Style global ====== */
+body {
+    margin:0;
+    font-family:'Segoe UI', Arial, sans-serif;
+    background:#f0f2f5;
+    color:#333;
+}
+
+/* ====== Header ====== */
+.admin-header {
+    background: linear-gradient(90deg, #1976d2, #2196f3);
+    padding: 12px 25px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    position: sticky;
+    top:0;
+    z-index:1000;
+}
+.admin-header .logo {
+    color:#fff;
+    font-weight:600;
+    font-size:18px;
+    display:flex;
+    align-items:center;
+    gap:8px;
+}
+.admin-header .menu-toggle {
+    display:none;
+    font-size:24px;
+    color:#fff;
+    cursor:pointer;
+}
+.admin-header ul {
+    list-style:none;
+    display:flex;
+    gap:20px;
+    margin:0;
+    padding:0;
+}
+.admin-header ul li a {
+    color:#fff;
+    text-decoration:none;
+    font-weight:600;
+    padding:8px 12px;
+    border-radius:6px;
+    transition:all .3s ease;
+    position:relative;
+}
+.admin-header ul li a i {
+    margin-right:6px;
+    transition: transform .3s ease, color .3s ease;
+}
+.admin-header ul li a:hover {
+    background:rgba(255,255,255,.2);
+    transform: translateY(-2px);
+}
+.admin-header ul li a:hover i {
+    transform: rotate(12deg) scale(1.1);
+    color:#ffeb3b;
+}
+
+/* ====== Responsive ====== */
+@media (max-width:768px) {
+    .admin-header .menu-toggle { display:block; }
+    .admin-header ul {
+        display:none;
+        flex-direction:column;
+        background:#2196f3;
+        position:absolute;
+        top:60px;
+        right:0;
+        width:220px;
+        padding:15px;
+        border-radius:0 0 8px 8px;
+        box-shadow: 0 4px 12px rgba(0,0,0,.2);
+        animation: fadeIn .3s ease;
+    }
+    .admin-header ul.show { display:flex; }
+    .admin-header ul li { margin:12px 0; }
+}
+
+/* ====== Dashboard cards ====== */
+.dashboard {
+    display:flex;
+    justify-content:center;
+    gap:25px;
+    flex-wrap:wrap;
+    margin:40px auto;
+    max-width:1000px;
+}
+.card {
+    background:#fff;
+    border-radius:14px;
+    padding:25px;
+    flex:1;
+    min-width:220px;
+    text-align:center;
+    box-shadow:0 6px 14px rgba(0,0,0,0.1);
+    transition:transform .3s ease, box-shadow .3s ease;
+}
+.card:hover {
+    transform:translateY(-8px);
+    box-shadow:0 8px 18px rgba(0,0,0,0.15);
+}
+.card h2 { margin-bottom:10px; }
+.card p { font-size:22px; font-weight:bold; color:#1976d2; }
+
+/* ====== Table ====== */
+table {
+    width:95%;
+    margin:25px auto;
+    border-collapse:collapse;
+    box-shadow:0 6px 14px rgba(0,0,0,0.1);
+    background:#fff;
+    border-radius:8px;
+    overflow:hidden;
+}
+table th, table td {
+    border:1px solid #ddd;
+    padding:12px;
+    text-align:center;
+}
+table th {
+    background:#2196f3;
+    color:#fff;
+}
+table tr:hover { background:#f1f9ff; }
+
+/* ====== Animations ====== */
+@keyframes fadeIn {
+    from {opacity:0; transform: translateY(-6px);}
+    to {opacity:1; transform: translateY(0);}
+}
